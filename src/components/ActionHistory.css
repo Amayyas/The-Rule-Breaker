@@ -1,0 +1,123 @@
+.action-history {
+    background: rgba(26, 26, 46, 0.5);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 1px solid rgba(0, 245, 255, 0.2);
+    animation: fadeIn 0.6s ease-out;
+}
+
+.history-title {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+.history-empty {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: var(--color-text-dim);
+}
+
+.empty-icon {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.5;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.history-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    border-left: 3px solid transparent;
+    animation: slideIn 0.3s ease-out both;
+    transition: var(--transition);
+}
+
+.history-item:hover {
+    background: rgba(0, 0, 0, 0.4);
+    transform: translateX(4px);
+}
+
+.history-item.positive {
+    border-left-color: var(--color-success);
+}
+
+.history-item.negative {
+    border-left-color: var(--color-error);
+}
+
+.history-item.neutral {
+    border-left-color: var(--color-text-dim);
+}
+
+.history-icon {
+    font-size: 1.5rem;
+    font-weight: 700;
+    min-width: 30px;
+    text-align: center;
+}
+
+.positive .history-icon {
+    color: var(--color-success);
+}
+
+.negative .history-icon {
+    color: var(--color-error);
+}
+
+.neutral .history-icon {
+    color: var(--color-text-dim);
+}
+
+.history-details {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.history-position {
+    font-size: 0.9rem;
+    color: var(--color-text);
+    font-family: var(--font-main);
+}
+
+.history-points {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.positive .history-points {
+    color: var(--color-success);
+}
+
+.negative .history-points {
+    color: var(--color-error);
+}
+
+.neutral .history-points {
+    color: var(--color-text-dim);
+}
+
+@media (max-width: 768px) {
+    .action-history {
+        padding: 1rem;
+    }
+
+    .history-title {
+        font-size: 1rem;
+    }
+}

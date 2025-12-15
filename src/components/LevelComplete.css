@@ -1,0 +1,98 @@
+.level-complete-content {
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.98) 0%, rgba(18, 18, 26, 0.98) 100%);
+    border: 3px solid rgba(0, 255, 136, 0.4);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+    box-shadow:
+        0 20px 80px rgba(0, 0, 0, 0.6),
+        0 0 100px rgba(0, 255, 136, 0.3),
+        inset 0 0 80px rgba(0, 255, 136, 0.05);
+    animation: slideIn 0.5s ease-out;
+}
+
+.complete-icon {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    animation: correctAction 1s ease-out infinite;
+}
+
+.complete-title {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    color: var(--color-success);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    text-shadow: 0 0 30px rgba(0, 255, 136, 0.6);
+}
+
+.complete-stats {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(0, 255, 136, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(0, 255, 136, 0.2);
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--color-text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+.stat-value {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--color-success);
+    text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+}
+
+.complete-message {
+    color: var(--color-text);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.complete-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .level-complete-content {
+        padding: 2rem 1.5rem;
+    }
+
+    .complete-title {
+        font-size: 1.8rem;
+    }
+
+    .complete-icon {
+        font-size: 4rem;
+    }
+
+    .stat-value {
+        font-size: 2rem;
+    }
+
+    .complete-actions {
+        flex-direction: column;
+    }
+
+    .modal-button {
+        width: 100%;
+    }
+}
