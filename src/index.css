@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Orbitron:wght@400;500;700;900&display=swap');
+
+:root {
+  --color-bg: #0a0a0f;
+  --color-bg-secondary: #12121a;
+  --color-surface: #1a1a2e;
+  --color-surface-light: #25253f;
+  --color-primary: #00f5ff;
+  --color-secondary: #ff00ff;
+  --color-tertiary: #ffeb3b;
+  --color-success: #00ff88;
+  --color-error: #ff3366;
+  --color-text: #e0e0e0;
+  --color-text-dim: #8888aa;
+  
+  /* Grid colors */
+  --color-grid-1: #ff6b6b;
+  --color-grid-2: #4ecdc4;
+  --color-grid-3: #ffe66d;
+  --color-grid-4: #a8daff;
+  --color-grid-5: #c77dff;
+  
+  --font-main: 'Space Mono', monospace;
+  --font-display: 'Orbitron', sans-serif;
+  
+  --shadow-glow: 0 0 20px rgba(0, 245, 255, 0.3);
+  --shadow-glow-intense: 0 0 40px rgba(0, 245, 255, 0.6);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background: linear-gradient(135deg, var(--color-bg) 0%, #0f0f1a 50%, var(--color-bg) 100%);
+  color: var(--color-text);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(0, 245, 255, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(255, 0, 255, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 245, 255, 0.6);
+  }
+}
+
+@keyframes correctAction {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes wrongAction {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+/* Utility classes */
+.glow {
+  box-shadow: var(--shadow-glow);
+}
+
+.glow-intense {
+  box-shadow: var(--shadow-glow-intense);
+}
+
+.correct-animation {
+  animation: correctAction 0.4s ease-out;
+}
+
+.wrong-animation {
+  animation: wrongAction 0.4s ease-out;
+}
